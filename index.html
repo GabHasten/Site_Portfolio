@@ -59,34 +59,48 @@
   <!-- Script -->
   <script>
     // Lista de projetos
-    const projetos = [
-      { titulo: "Automa_Caixa", descricao: "Descrição breve do trabalho.", arquivo: "automa_Caixa.zip" },
-      { titulo: "Automa_Etiquetas", descricao: "Outro trabalho interessante.", arquivo: "automation_correios_selenium.zip" }
-    ];
+const projetos = [
+  { 
+    titulo: "Automa_Caixa", 
+    descricao: "Descrição breve do trabalho.", 
+    arquivo: "automa_Caixa.zip",
+    video: "" 
+  },
+  { 
+    titulo: "Automa_Etiquetas", 
+    descricao: "Outro trabalho interessante.", 
+    arquivo: "automation_correios_selenium.zip",
+    video: "Etiquetas.mp4" 
+  }
+];
 
     // Função para criar card
-    function criarCard(titulo, descricao, arquivo) {
-      const card = document.createElement("div");
-      card.classList.add("glass", "rounded-xl", "p-6", "shadow-lg", "flex", "flex-col");
+function criarCard(titulo, descricao, arquivo, video) {
+  const card = document.createElement("div");
+  card.classList.add("glass", "rounded-xl", "p-6", "shadow-lg", "flex", "flex-col");
 
-      card.innerHTML = `
-        <h2 class="text-lg font-semibold text-[#F2F2F2] mb-2">${titulo}</h2>
-        <p class="text-sm text-[#F2F2F2] mb-4">${descricao}</p>
-        <a href="${arquivo}" download
-           class="mt-auto bg-[#0339A6] text-[#F2F2F2] py-2 px-4 rounded-lg text-sm font-medium hover:bg-[#2C2657] transition">
-          📥 Baixar
-        </a>
-      `;
-      return card;
-    }
+  card.innerHTML = `
+    <h2 class="text-lg font-semibold text-[#F2F2F2] mb-2">${titulo}</h2>
+    <video class="w-full rounded-lg mb-4" controls>
+      <source src="${video}" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
+    <p class="text-sm text-[#F2F2F2] mb-4">${descricao}</p>
+    <a href="${arquivo}" download
+       class="mt-auto bg-[#0339A6] text-[#F2F2F2] py-2 px-4 rounded-lg text-sm font-medium hover:bg-[#2C2657] transition">
+      📥 Baixar
+    </a>
+  `;
+  return card;
+}
 
     // Adiciona os cards na página
-    window.onload = () => {
-      const container = document.getElementById("projetos");
-      projetos.forEach(p => {
-        container.appendChild(criarCard(p.titulo, p.descricao, p.arquivo));
-      });
-    };
+  window.onload = () => {
+    const container = document.getElementById("projetos");
+    projetos.forEach(p => {
+      container.appendChild(criarCard(p.titulo, p.descricao, p.arquivo, p.video));
+    });
+  };
 
     // Pop-up de contato
     document.getElementById("btnContato").addEventListener("click", function(event) {
