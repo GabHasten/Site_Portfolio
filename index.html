@@ -139,8 +139,7 @@ footer {
       <h2 class="text-lg font-bold mb-2 text-[#F2F2F2]">Entre em contato</h2>
       <button onclick="window.open('mailto:gabrielhastenreiter58@gmail.com')" class="text-[#F2F2F2]">Email: gabrielhastenreiter58@email.com</button>
       <button onclick="window.open('https://wa.me/5531988542809')" class="text-[#F2F2F2]">Telefone: (31) 98854-2809</button>
-      <button onclick="fecharPopup()" 
-              class="bg-[#2C2657] text-[#F2F2F2] px-4 py-2 rounded-lg hover:bg-[#1f1a40] transition mt-4">
+      <button onclick="fecharPopup()" class="bg-[#2C2657] text-[#F2F2F2] px-4 py-2 rounded-lg hover:bg-[#1f1a40] transition mt-4">
         Fechar
       </button>
     </div>
@@ -159,10 +158,14 @@ const projetos = [
   { 
     titulo: "Automa_Caixa",
     descricao: "Projeto em construção...<br><br>O projeto já esta pronto, está em edição o vídeo para não vazar nenhum dado sensível do cliente."
+  },
+  {titulo: "Site Avancce",
+    descricao: "Site Criado para uma cliente minha, hospedado de forma correta. Primeiro projeto meu hospedado, Site de complexidade média. Gostei muito do resultado que tive!",
+    arquivo: "https://avancce.site/",
+    video: "AvanccePort.mp4"
   }
 ];
 
-    // Função para criar card
 function criarCard(titulo, descricao, arquivo, video) {
 
   const card = document.createElement("div");
@@ -209,6 +212,7 @@ function criarCard(titulo, descricao, arquivo, video) {
         📥 Baixar
       </a>
     `;
+  
   }
 
   card.innerHTML = conteudo;
@@ -239,13 +243,14 @@ function criarCard(titulo, descricao, arquivo, video) {
 
 <!-- footer -->
 
-<footer class="bg-[#2C2657] mt-10 shadow-inner py-6 text-center text-sm text-[#F2F2F2] flex flex-col items-center space-y-4">
+<footer class="bg-[#2C2657] mt-10 shadow-inner py-6 text-center text-sm text-[#F2F2F2] flex flex-col items-center space-y-4 width='100'">
   <p>© 2026 Gabriel - Todos os direitos reservados</p>
   
   <button onclick="window.open('https://wa.me/5531988542809')"
     class="bg-[#0339A6] text-white px-4 py-2 rounded-full shadow-lg hover:bg-[#0339A6] border-2 border-[#0339A6] shadow-md hover:bg-[#2C2657] transition">
     🐞 Reportar Bug
   </button>
+
   <div class="flex justify-center gap-4 mt-6">
     <!-- GitHub -->
     <a title="Git Hub" href="https://github.com/GabHasten" target="_blank"
